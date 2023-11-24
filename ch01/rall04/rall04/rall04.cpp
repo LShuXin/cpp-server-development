@@ -62,14 +62,14 @@ public:
 	bool DoBind(const char* ip, short port = 6000)
 	{
 		SOCKADDR_IN addrSrv;
-	    // Windows10 EnterPrise + Visual Stuido 2017 Community 运行此代码时发生如下错误：
+	        // Windows10 EnterPrise + Visual Stuido 2017 Community 运行此代码时发生如下错误：
 		// 
 		// E1097 未知特性 "no_init_all"	rall04	C : \Program Files(x86)\Windows Kits\10\Include\10.0.18362.0\um\winnt.h	7597
 		//
 		// 解决方案：
 		// 在 winnt.h 头文件中
 		// 
-        // #if (_MSC_VER >= 1915)
+                // #if (_MSC_VER >= 1915)
 		// #pragma warning(disable:4845)   // __declspec(no_init_all) used but d1initall not set
 		// #endif
 		// 
@@ -83,7 +83,7 @@ public:
 		// 
 		// 值得一提的是
 		//
-	    // #if (_MSC_VER >= 1915)
+	        // #if (_MSC_VER >= 1915)
 		// #pragma warning(disable:4845)   // __declspec(no_init_all) used but d1initall not set
 		// #endif
 		//
@@ -107,6 +107,8 @@ public:
 		//
 		// 解决方案三：
 		// 添加 #pragma warning(disable:4996)
+		//
+		// 相关链接： https://stackoverflow.com/questions/36683785/inet-addr-use-inet-pton-or-inetpton-instead-or-define-winsock-deprecated
 
 
 		// 方案一
@@ -116,7 +118,7 @@ public:
 		// InetPton(AF_INET, _T("0.0.0.0"), &addrSrv.sin_addr.S_un.S_addr);
 
 		// 方案三
-        #pragma warning(disable:4996) 
+                #pragma warning(disable:4996) 
 		addrSrv.sin_addr.S_un.S_addr = inet_addr(ip);
 
 		addrSrv.sin_family = AF_INET;
