@@ -97,7 +97,6 @@ public:
 
 		
 		// 使用 addrSrv.sin_addr.S_un.S_addr = inet_addr(ip); 会发生如下错误：
-		//
 		// C4996 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
 		//
 		// 解决方案一(需要引入 Ws2tcpip.h)：
