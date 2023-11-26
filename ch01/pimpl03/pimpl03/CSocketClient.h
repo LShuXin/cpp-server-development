@@ -2,6 +2,7 @@
 
 #include <WinSock2.h>
 #include <iostream>
+#include <memory>
 
 class CNetProxy;
 
@@ -33,8 +34,8 @@ public:
 	BOOL Login(int& nRet);
 
 private:
-	class Impl;
-	Impl* m_pImpl;
+	struct Impl;
+	std::unique_ptr<Impl> m_pImpl;
 
 };
 

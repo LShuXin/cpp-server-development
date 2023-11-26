@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\pimpl02\pimpl02\CSocketClient.cpp" />
-    <ClCompile Include="..\..\pimpl02\pimpl02\main.cpp" />
+    <ClInclude Include="CSocketClient.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\pimpl02\pimpl02\CSocketClient.h" />
+    <ClCompile Include="CSocketClient.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -2,7 +2,7 @@
 
 // 这里类 Impl 的定义要放在 CSocketClient 构造函数定义之前
 // 因为 CSocketClient 构造函数的定义中用到了 Impl 类
-class CSocketClient::Impl
+struct CSocketClient::Impl
 {
 public:
 	Impl()
@@ -38,7 +38,7 @@ public:
 
 CSocketClient::CSocketClient()
 {
-	m_pImpl = new Impl();
+	m_pImpl.reset(new Impl());
 }
 
 CSocketClient::~CSocketClient()
