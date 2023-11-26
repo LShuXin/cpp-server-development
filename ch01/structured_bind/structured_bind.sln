@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1401
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "structured_bind", "structured_bind\structured_bind.vcxproj", "{2903F2C4-9477-4026-9299-0A7D5FE82963}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Debug|x64.ActiveCfg = Debug|x64
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Debug|x64.Build.0 = Debug|x64
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Debug|x86.ActiveCfg = Debug|Win32
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Debug|x86.Build.0 = Debug|Win32
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Release|x64.ActiveCfg = Release|x64
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Release|x64.Build.0 = Release|x64
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Release|x86.ActiveCfg = Release|Win32
+		{2903F2C4-9477-4026-9299-0A7D5FE82963}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F66F645-AC83-4758-A4CC-5D0AF3B297DB}
+	EndGlobalSection
+EndGlobal
