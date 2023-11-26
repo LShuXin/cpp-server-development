@@ -6,7 +6,7 @@
 
 int main()
 {
-	CSocketClient cSocketClent = CSocketClient();
+	CSocketClient cSocketClent;
 	cSocketClent.test();
 }
 
