@@ -1,4 +1,4 @@
-本实例是 pimpl02 的 C11 改进版，主要改进内容有如下几点
+本实例是 pimpl02 的 C14 改进版，主要改进内容有如下几点
 
 1. CSocketClent 私有成员变量
 
@@ -31,8 +31,8 @@ class CSocketClient::Impl
 
 ```
 struct CSocketClient::Impl
-
 {
+
 }
 ```
 
@@ -50,9 +50,9 @@ CSocketClient::CSocketClient()
 改为
 
 ```
-CSocketClient::CSocketClient()
+CSocketClient::CSocketClient(): m_pImpl(std::make_unique<Impl>())
 {
-    m_pImpl.reset(new Impl());   
+    // m_pImpl = new Impl();  
 }
 ```
 
@@ -76,8 +76,6 @@ CSocketClient::~CSocketClient()
 ```
 
 5. 为了使用 std::unique_ptr<T>, 引入了 <memory>
-
-
 
 
 经过上述修改后，成员变量的初始化发生了变化，析构函数中对于 m_pImpl 指针不需要再使用 delete
