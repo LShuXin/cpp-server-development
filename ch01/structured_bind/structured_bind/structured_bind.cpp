@@ -15,6 +15,12 @@ struct UserInfo
 	std::string address;
 };
 
+struct Point
+{
+	double x;
+	double y;
+};
+
 
 // 运行该示例需要 C++17
 int main()
@@ -68,6 +74,16 @@ int main()
 	int age1 = std::get<3>(userInfo1);
 	std::string address1 = std::get<4>(userInfo1);
 	std::cout << username1 << " " << password1 << " " << gender1 << " " << age1 << " " << address1 << std::endl;
+
+
+	std::cout << std::endl;
+	double myArray[3] = { 1.0, 2.0, 3.0 };
+	auto [a, b, c] = myArray;
+	// 书本中为 Point myPoint(10.0, 20.0);
+	Point myPoint{ 10.0, 20.0 };
+	auto [myX, myY] = myPoint;
+
+
     
 	return 0;
 }
