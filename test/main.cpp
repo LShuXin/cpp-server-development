@@ -1,36 +1,53 @@
-#include <iostream>
+#include <stdio.h>
 #include <thread>
-#include <sstream>
+#include <memory>
 
-void worker_thread_func()
+class Thread
 {
-    while(true)
-    {
-    }
+public:
+	Thread(){}
+	~Thread(){}
+	void stop()
+	{
+            m_stopped = true;
+            if (m_spThread)
+	    {
+                if (m_spThread.joinable())
+		{
+                    m_spThread.join();
+		}
+	    }
+	}
+	void start()
+	{
+            m_stopped = false;
+	    m_spThread.reset(new std::thread(&Thread::threadFunc, this, 100, 200));
+	}
+	void threadFunc(int a, int b)
+	{
+            while (!m_stopped)
+	    {
+		    printf("hahahaha, %d %d", a, b);
+		    sleep(1);
+	    }
+	}
+private:
+	bool                              m_stopped;
+	std::shared_ptr<std::thread>      m_spThread;
+
 }
 
 
 int main()
 {
-    std::thread worker_thread(worker_thread_func);
-    std::thread::id worker_thread_id = worker_thread.get_id();
-    std::cout << "worker threadID:" << worker_thread_id << std::endl;
+    Thread thread;
+    thread.start();
 
-    std::thread::id main_thread_id = std::this_thread::get_id();
-
-    std::cout << main_thread_id << std::endl;
-
-    std::ostringstream oss;
-    oss << main_thread_id;
-    
-    std::cout << oss.str() << std::endl;
-
-    std::cout << std::stoull(oss.str()) << std::endl;
-
-
-    while (true)
+    while(true)
     {
-        
     }
+
     return 0;
 }
+
+
