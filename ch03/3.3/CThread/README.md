@@ -6,6 +6,8 @@ Organize your project structure. A typical project structure might look like thi
 
 ```
 project_root/
+B
+B
 |-- CMakeLists.txt 
 |-- src/ 
 |   |-- CThread.h 
@@ -72,7 +74,7 @@ For Visual Studio (Windows):
 ```
 mkdir build
 cd build
-cmake .. -G "Visual Studio 16 2019"  # Use the appropriate version
+cmake .. -G "Visual Studio 15 2017 Win64"  # Use the appropriate version
 ```
 
 ## Step 4: Build the Project
@@ -91,5 +93,6 @@ After building the project, you can find the executable (e.g., MyThreadExample) 
 This basic example can be extended based on the specific needs and dependencies of your project. Always consult the CMake documentation for more advanced features and options.
 
 
+B
 
 
