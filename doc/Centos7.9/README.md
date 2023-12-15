@@ -171,7 +171,7 @@ yum install -y wget nc lsof
 
 ### 2. 更新 [VMtools](https://so.csdn.net/so/search?q=VMtools&spm=1001.2101.3001.7020) (可选)
 
-主要是为了解决无法在主机和虚拟机之间无法复制粘贴的问题
+主要是为了解决无法在主机和虚拟机之间无法复制粘贴的问题(Windows  直接在 VM > Setting > Options 中操作即可，下面的共享文件夹也是)
 
 - 先检查是否预装了 open-vm-tools 包
   ```
@@ -395,7 +395,7 @@ yum install -y wget nc lsof
 #### 1、在系统中安装存储库
 
 ```cpp
-yum install centos-release-scl
+yum install -y centos-release-scl
 ```
 
 #### 2、安装 gcc 和 g++ 包（注意版本号：11版）
@@ -454,7 +454,7 @@ vi /etc/profile
 > 在文件后面添加下面两行内容：
 
 ```cpp
-PATH=$PATH::/opt/rh/devtoolset-11/root/usr/bin
+PATH=$PATH:/opt/rh/devtoolset-11/root/usr/bin
 export PATH
 ```
 
@@ -650,7 +650,7 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
 直接使用 yum 安装
 
 ```
- yum install gdb
+ yum install -y gdb
  
  [root@localhost ~]# gdb --version
 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7
@@ -672,11 +672,7 @@ For bug reporting instructions, please see:
 >
 > 
 >
-> CentOS7.9 系统默认 python 版本为 2.7.5，直接使用 yum install vim-enhanced 安装的 vim 版本为 2:7.4.629-8.el7_9，且由于最新版本的 vim(9.x) 、 vim 插件 YouCompleteMe 都需要 python3.8+，所以这里会先安装 python3.8
->
-> 
->
-> Vim 需要使用 Python3.8 编译才能使用最新的YouCompleteMe插件
+> CentOS7.9 系统默认 python 版本为 2.7.5，直接使用 yum install vim-enhanced 安装的 vim 版本为 2:7.4.629-8.el7_9，且由于最新版本的 vim(9.x) 需要 python3.8+，所以这里会先安装 python3.8
 >
 > 
 >
